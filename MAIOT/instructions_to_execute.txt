@@ -1,2 +1,3 @@
 nasm -f elf64 name.asm
 ld -o name name.o
+./name
