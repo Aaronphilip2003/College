@@ -11,10 +11,17 @@ l3 equ $-m3
 m4 db "Your college is:"
 l4 equ $-m4
 
+m5 db "Enter your Roll no.:"
+l5 equ $-m5
+
+m6 db "Your Roll No. is:"
+l6 equ $-m6
+
 
 section .bss
 n resb 20
 clg resb 20
+roll resb 20
 
 section .text
 
@@ -48,6 +55,18 @@ syscall
 
 mov rax,1
 mov rdi,1
+mov rsi,m5
+mov rdx,l5
+syscall
+
+mov rax,0
+mov rdi,0
+mov rsi,roll
+mov rdx,20
+syscall
+
+mov rax,1
+mov rdi,1
 mov rsi,m3
 mov rdx,l3
 syscall
@@ -67,6 +86,18 @@ syscall
 mov rax,1
 mov rdi,1
 mov rsi,clg
+mov rdx,20
+syscall
+
+mov rax,1
+mov rdi,1
+mov rsi,m6
+mov rdx,l6
+syscall
+
+mov rax,1
+mov rdi,1
+mov rsi,roll
 mov rdx,20
 syscall
 
