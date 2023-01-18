@@ -40,3 +40,18 @@ dec cx ; decrement the counter
 jnz up2 ; loop back to the up2 label
 
 mov word[Result],ax
+mov bp,4
+up: rol ax,4
+mov bx,ax
+and ax,0Fh
+cmp al,09
+jbe down
+add al,07h
+
+down: add al,30h
+mov byte[temp],al
+rw 1,1,temp,1
+mov ax,bx
+dec bp
+jnz up
+rw 60,0,0,0
