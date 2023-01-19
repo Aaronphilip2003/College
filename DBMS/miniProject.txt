@@ -1,0 +1,21 @@
+Follow steps of SDLC (not all because this is a mini-project)
+
+Make an SRS ( get all specifications)
+Make a design ( user-interface, flowcharts, diagrams)
+
+Frontend (Works with UI) + Backend (Database)
+
+Backend - Use MySQL (compulsory)
+
+Backend Phases
+1) Design an ER diagram for your project
+2) Convery ER diagram to a relational model (tables)
+3) Now make the tables 
+
+FRONTEND SPECIFICATIONS
+your own choice
+
+ER,DDL,DML,PLSQL(atleast 2 blocks (cursor,procedure,function,trigger) are compulsory)
+
+include 4-5 forms (webpages)
+Prepare Report (format will be provided)
