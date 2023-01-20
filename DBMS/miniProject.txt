@@ -19,3 +19,5 @@ ER,DDL,DML,PLSQL(atleast 2 blocks (cursor,procedure,function,trigger) are compul
 
 include 4-5 forms (webpages)
 Prepare Report (format will be provided)
+
+To be done continuously throughout the semester
