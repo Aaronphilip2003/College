@@ -41,17 +41,17 @@ jnz up2 ; loop back to the up2 label
 
 mov word[Result],ax
 mov bp,4
-up: rol ax,4
-mov bx,ax
-and ax,0Fh
+up: rol ax,4 ; after rotation we will get 05F0
+mov bx,ax ; ax=005F therefore bx=005F
+and ax,0Fh ; andding with 000F (05F0 & 00F0 = 0000)
 cmp al,09
 jbe down
 add al,07h
 
-down: add al,30h
-mov byte[temp],al
-rw 1,1,temp,1
-mov ax,bx
+down: add al,30h ; add 30
+mov byte[temp],al ; move al value to temp
+rw 1,1,temp,1 ; on output screen we will first get 0
+mov ax,bx ; load 005F into ax again (it had become 05F0)
 dec bp
 jnz up
 rw 60,0,0,0 ; if we dont write this termination code we will get a segmentation fault error
