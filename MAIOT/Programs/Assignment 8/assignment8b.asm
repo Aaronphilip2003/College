@@ -8,7 +8,7 @@ syscall
 
 section .data
 Number dw 270Fh
-msg db 10d, "Equivalent Hex number is:" ; 10d is newline and 13d is left-align
+msg db 10d, "Equivalent Decimal number is:" ; 10d is newline and 13d is left-align
 msglen equ $-msg
 
 section .bss
