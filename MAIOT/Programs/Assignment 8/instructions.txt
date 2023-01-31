@@ -1,0 +1,35 @@
+Assignment is conversion of BCD to Hex and Hex to BCD
+
+mov al,bl // contents of bl (b-register) are moved to al (accumulator / a-register)
+
+
+mov bx,0Ah
+mov dx,00h
+mov ah,[num]
+div bx // divides num by contents in ah
+
+
+
+
+
+// pseudocode 
+
+mov ax,word[number]
+mov bx,10H (move value 16 in x register (10h is 16)) // for hex to bcd we'll store 0ah in bc (0ah-->10)
+mov rdi,num+4 (9999 decimal ----> 270F in hex so  for 2,7,0,F 4 mem locations are reserved)
+
+loop3:
+mov dx,0
+div bx
+cmp dl,09h //compare dl with 09 remainder is got in dl reg
+jbe down1
+add dl,07h
+
+down1: add dl,30h
+mov [rdi],dl
+dec rdi // decrement the pointer to go from the F location to the location where the next value will be stored (0 in this case)
+cmp ax,0
+jne loop3
+
+scall 1,1,msg,msglen
+scall 1,1,num,5
