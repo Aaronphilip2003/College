@@ -7,7 +7,7 @@ syscall
 %endmacro
 
 section .data
-Number dw 9999d
+Number dw 270Fh
 msg db 10d, "Equivalent Hex number is:" ; 10d is newline and 13d is left-align
 msglen equ $-msg
 
@@ -18,7 +18,7 @@ section .text
 global _start
 _start:
 mov ax,word[Number]
-mov bx,10h
+mov bx,0Ah
 mov rdi,num+4
 
 loop3:
