@@ -37,22 +37,17 @@ void tree::create_r()
         {
             temp = root;
             int flag = 0;
-            /*curr=new treenode;
-            cout<<"enter the current node"<<endl;
-            cin>>curr->data;
-            curr->left=NULL;
-            curr->right=NULL;*/
             while (flag == 0)
             {
                 char ch;
-                cout << "Where do you want to add the data, left or right of :" << temp->data << endl;
+                cout << "Where do you want to add the data, left or right (l/r) :" << endl;
                 cin >> ch;
-                if (ch = 'l')
+                if (ch == 'l')
                 {
                     if (temp->left == NULL)
                     {
                         curr = new treenode;
-                        cout << "enter the current node" << endl;
+                        cout << "Enter the current node:" << endl;
                         cin >> curr->data;
                         curr->left = NULL;
                         curr->right = NULL;
@@ -63,12 +58,12 @@ void tree::create_r()
                 }
                 else
                 {
-                    if (ch = 'r')
+                    if (ch == 'r')
                     {
                         if (temp->right == NULL)
                         {
                             curr = new treenode;
-                            cout << "enter the current node" << endl;
+                            cout << "Enter the current node:" << endl;
                             cin >> curr->data;
                             curr->left = NULL;
                             curr->right = NULL;
@@ -76,10 +71,10 @@ void tree::create_r()
                             flag = 1;
                         }
                         temp = temp->right;
-                    } // if end
-                }     // else end
-            }         // while flag
-            cout << "Do You want to continue, y/n" << endl;
+                    }
+                }
+            }
+            cout << "Do You want to continue, (y/n)" << endl;
             cin >> con;
         } while (con == 'y');
     }
