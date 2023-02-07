@@ -1,0 +1,58 @@
+Sorting Algorithm (Bubble Sort)
+
+09h (0000 10001) - it means that every number is stored in 1 byte
+02h
+03h
+07h
+05h
+
+section .data
+arr db 09h,02h,03h,07h,05h
+
+expected output: 
+02h,03h,05h,07h,09h
+
+section .bss
+result resb 15 (15 because we need to append the enter button's hexadecimal (14+1))
+
+for 09h
+first 0 is displayed then 9
+so 30h and 39h
+thn enter's ASCII value (0ah)
+
+30h
+39h
+0ah
+30h
+32h
+0ah
+.
+.
+.
+.
+.
+So total 15 bytes need to be reserved
+
+display
+operate 1,1,result,15
+
+LOGIC
+mov esi,arr
+mov al,byte[esi] (in first iteration, al has 09h)
+cmp al,byte[esi+1] (compares 09 with 02) (now 09 and 02 need to be swapped)
+jbe(jump below equal) skip (jbe comes with accumulator value by default) (replacing it with another register is possible) 
+(jbe is for ascending) and (jae is for descending)
+xchg [esi+1],al
+
+skip:
+inc esi
+
+mov bl,04 (inner loop)
+mov cl,05 (outer loop)
+
+we need to always use a pointer to display ( eg. edi,esi)
+
+Before sorting- esi
+After sorting- edi
+
+
