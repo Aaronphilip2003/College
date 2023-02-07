@@ -39,7 +39,7 @@ mov rsi,result
 mov dl,10 ; for one number there are 2 digits
 
 disp_loop1:
-mov cl,2
+mov cl,2 ; displaying 2 digit number
 mov al,[rdi]
 
 againx:
@@ -66,5 +66,5 @@ dec dl
 jnz disp_loop1
 operate 1,1,result,15
 
-operate 60,0,0,0
+operate 60,0,0,0 ; exit syscall
 
