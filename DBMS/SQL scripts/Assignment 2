@@ -1,0 +1,30 @@
+Q) add column asset in supply_table (X)
+A) alter table Suppliers add asset int;
+
+
+Q) add column quantity in parts_table (X)
+A) alter table Parts add quantity int;
+
+
+Q) add column manager in projects_table (X)
+A) alter table Projects add manager varchar(25);
+
+
+Q) change datatype of column weight in parts_table (X)
+A) alter table Parts modify column weight float(10,2);
+
+Q) rename column j_name from the project to the project_name (X)
+A) alter table Projects rename column project_name to project;
+
+add column supplier_id as the foreign key in parts_table (X)
+ALTER TABLE Parts ADD COLUMN supplier_id INT, ADD CONSTRAINT fk_parts_suppliers FOREIGN KEY (supplier_id) REFERENCES Suppliers (supplier_id);
+
+
+Q) rename any table (X)
+A) alter table Parts rename Part;
+
+Q) drop any column from any table (X)
+A) alter table Projects drop column manager;
+
+
+drop table supplier
