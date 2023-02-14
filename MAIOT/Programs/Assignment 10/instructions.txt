@@ -1,0 +1,17 @@
+GROUP 5
+
+Write an x86 Assembly Language Program ro simulate the copy command in ubuntu using file operations
+
+cp file1 file2
+
+RUN Command:
+./assignment10 file1.txt file2.txt
+
+opening and closing system calls are different
+
+using flip classroom activity (video will be sent)
+
+- group assignment
+- submit task individually
+- viva will be taken
+
