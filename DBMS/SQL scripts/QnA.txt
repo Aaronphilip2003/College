@@ -1,0 +1,35 @@
+List the employee names and his annual salary jobwise
+select Ename, Salary from Employee;
+
+Delete the Employee whose name starts with S
+delete from Employee where Ename like "S%";
+
+Increment Salary of Emp No. 7490 by 30% 
+mysql> update Employee
+    -> set Salary=Salary+0.3*Salary
+    -> where EmpNo=7490;
+
+List the total salary, maximum and minimum salary and average salary of the employees datewise(not currently)
+mysql> select avg(Salary),min(Salary),max(Salary)
+    -> from Employee
+    -> ;
+    
+list the employees whose name contains last letter as n
+mysql> select * from Employee where Ename like "%n";
+
+Display the employees who have less salary than that of Aaron
+mysql> Select * from Employee where Salary<(select Salary from Employee where Ename="Aaron");
+
+Display the employees who have Salary greater than 1000
+mysql> select * from Employee where Salary>1000
+    -> ;
+
+List Employees belonging to department 30,40 or 10
+mysql> Select Ename from Employee where Deptno in (30,40,10);
+
+List the employees whose designation is "Salesman" and sal > 1000
+mysql> select Ename from Employee where Job="Salesman" and Salary>1000;
+
+List the employees details descending wise whose designation is clerk and commisision is greater than 100
+mysql> select * from Employee where Job="Salesman" and commission > 100 order by Salary desc limit 10;
+
