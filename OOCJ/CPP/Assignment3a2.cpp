@@ -14,7 +14,13 @@ public:
     Complex(float x, float y);
     void display();
     friend Complex operator+(Complex &a, Complex &b);
-    friend Complex operator-(Complex &a, Complex &b);
+    Complex operator-(Complex &b)
+    {
+        Complex temp;
+        temp.real = real - b.real;
+        temp.imag = imag - b.imag;
+        return temp;
+    }
     friend Complex operator*(Complex &a, Complex &b);
 };
 
@@ -29,14 +35,6 @@ Complex operator+(Complex &ca, Complex &cb)
     Complex temp;
     temp.real = ca.real + cb.real;
     temp.imag = ca.imag + cb.imag;
-    return temp;
-}
-
-Complex operator-(Complex &ca, Complex &cb)
-{
-    Complex temp;
-    temp.real = ca.real - cb.real;
-    temp.imag = ca.imag - cb.imag;
     return temp;
 }
 
