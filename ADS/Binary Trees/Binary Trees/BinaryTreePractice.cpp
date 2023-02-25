@@ -80,50 +80,17 @@ void inorder(node *root)
     }
 
     inorder(root->left);
-    cout << root->data << " ";
+    cout << root->data;
     inorder(root->right);
-}
-
-void preorder(node *root)
-{
-    // V L R
-    if (root == NULL)
-    {
-        return;
-    }
-    cout << root->data << " ";
-    preorder(root->left);
-    preorder(root->right);
-}
-
-void postorder(node *root)
-{
-    // L R V
-    if (root == NULL)
-    {
-        return;
-    }
-    postorder(root->left);
-    postorder(root->right);
-    cout << root->data << " ";
 }
 
 int main()
 {
     node *root = NULL;
     root = buildtree(root);
-    cout << "Breadth First Traversal:" << endl;
+    cout<<"Breadth First Traversal:"<<endl;
     levelOrderTraversal(root);
-    cout << "Inorder Traversal (LVR):" << endl;
+    cout<<"Inorder Traversal (LVR):"<<endl;
     inorder(root);
-    cout << endl;
-    cout << "Preorder Traversal (VLR):" << endl;
-    preorder(root);
-    cout << endl;
-    cout << "Postorder Traversal (LRV):" << endl;
-    postorder(root);
-    cout << endl;
     return 0;
 }
-
-// 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
