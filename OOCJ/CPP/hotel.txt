@@ -1,0 +1,6 @@
+Customer Name: Aaron
+Customer ID: 1
+Age: 45
+Income: 60000
+City: Pune
+Room Type: Delux
